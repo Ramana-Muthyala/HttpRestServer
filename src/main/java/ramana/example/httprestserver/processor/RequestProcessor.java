@@ -8,7 +8,6 @@ import ramana.example.httprestserver.types.RequestMapping;
 import ramana.example.httprestserver.util.HandlerMappings;
 import ramana.example.httprestserver.util.HttpUtil;
 import ramana.example.niotcpserver.codec.http.Util;
-import ramana.example.niotcpserver.codec.http.request.Field;
 import ramana.example.niotcpserver.codec.http.request.v1.RequestMessage;
 import ramana.example.niotcpserver.codec.http.response.ResponseMessage;
 import ramana.example.niotcpserver.codec.http.v1.Processor;
@@ -90,6 +89,6 @@ public class RequestProcessor implements Processor {
         responseMessage.statusCode = Util.STATUS_OK;
         ArrayList<String> values = new ArrayList<>(1);
         values.add(String.valueOf(responseMessage.body.length));
-        responseMessage.headers.add(new Field(Util.REQ_HEADER_CONTENT_LENGTH, values));
+        responseMessage.headers.put(Util.REQ_HEADER_CONTENT_LENGTH, values);
     }
 }
