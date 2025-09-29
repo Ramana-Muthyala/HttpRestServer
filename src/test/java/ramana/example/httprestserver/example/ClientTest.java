@@ -59,7 +59,7 @@ public class ClientTest {
                 String request = "GET /greeting HTTP/1.1\r\n" +
                         "Host:localhost\r\n" +
                         "User-Agent:NIOTCPServer/1.0\r\n" +
-                        "Accept:*.*\r\n" +
+                        "Accept:*/*\r\n" +
                         "Accept-Encoding:gzip, deflate, br\r\n" +
                         "\r\n";
                 buffer.put(request.getBytes());
